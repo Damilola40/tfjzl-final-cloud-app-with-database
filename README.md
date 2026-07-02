@@ -9,6 +9,8 @@ An `onlinecourse` app has already been provided in this repo upon which you will
 - You may choose any cloud platform for deployment (default is IBM Cloud Foundry)
 - Depends on your deployment, you may choose any SQL database Django supported such as SQLite3, PostgreSQL, and MySQL (default is SQLite3)
 
+PWd: coursera123
+
 **ER Diagram**
 For your reference, we have prepared the ER diagram design for the new assesement feature.
 
