@@ -98,7 +98,7 @@ class Enrollment(models.Model):
 class Questions(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     content = models.CharField(max_length=200)
-    grade = models.integer(default=50)
+    grade = models.IntegerField(default=50)
 
     def str(self): return "Question: " + self.content
 
@@ -116,6 +116,6 @@ class Choice(models.Model):
     content = models.CharField(max_length=200)
     is_correct = models.BooleanField(default=False)
 
-Rclass Submission(models.Model):
+class Submission(models.Model):
     enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE)
     choices = models.ManyToManyField(Choice)
