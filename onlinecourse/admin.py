@@ -11,10 +11,6 @@ class ChoiceInline(admin.StackedInline):
     model = Choice
     extra = 2
 
-class QuestionInline(admin.StackedInline):
-    model = Question
-    extra = 2
-
 
 # Register your models here.
 class CourseAdmin(admin.ModelAdmin):
@@ -24,7 +20,7 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
 
 class QuestionAdmin(admin.ModelAdmin):
-    inlines = [QuestionInline]
+    inlines = [ChoiceInline]
     list_display = ['content']
 
 class LessonAdmin(admin.ModelAdmin):
