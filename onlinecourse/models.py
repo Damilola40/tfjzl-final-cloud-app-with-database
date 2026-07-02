@@ -100,7 +100,7 @@ class Question(models.Model):
     content = models.CharField(max_length=200)
     grade = models.IntegerField(default=50)
 
-    def str(self): return "Question: " + self.content
+    def __str__(self): return "Question: " + self.content
 
     # method to calculate if the learner gets the score of the question
     def is_get_score(self, selected_ids):
@@ -112,7 +112,7 @@ class Question(models.Model):
             return False
 
 class Choice(models.Model):
-    course = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
     content = models.CharField(max_length=200)
     is_correct = models.BooleanField(default=False)
 
